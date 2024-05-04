@@ -6,7 +6,7 @@ import shuffle from './utilities/shuffle';
 
 function App() {
   const [wins, setWins] = useState(0);
-  const [cards, setCards] = useState(shuffle); // src/utilities/shuffle.js
+  const [cards, setCards] = useState(shuffle);
   const [pickOne, setPickOne] = useState(null);
   const [pickTwo, setPickTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
@@ -25,7 +25,6 @@ function App() {
   };
 
   const handleNewGame = () => {
-    setWins(0);
     clearBadge();
     handleTurn();
     setCards(shuffle);
@@ -54,10 +53,10 @@ function App() {
       }
     }
 
-    return() => {
+    return () => {
       clearTimeout(pickTimer);
     };
-  }, [cards, pickOne, pickTwo, setBadge, wins]);
+  }, [pickOne, pickTwo]);
 
   useEffect(() => {
     const checkWin = cards.every((card) => card.matched);
@@ -68,8 +67,7 @@ function App() {
       setBadge();
       handleNewGame();
     }
-  }, [cards, setBadge, wins]);
-  
+  }, [cards, setBadge]);
 
   return (
     <>
