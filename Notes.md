@@ -75,4 +75,4 @@ mkdir ~/src/components/Card.jsx
 > Write src/components/Header.jsx
 ###### Update src/App.jsx and src/components/Card.jsx until next 3rd commit
 > To test functionality locally, run `npm run build` followed by `serve -s build` from the project root
-**TODO:** *App components (Header, Cards) disappear after a win (all objects matched). Why?*
+###### End of Notes
