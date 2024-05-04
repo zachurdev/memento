@@ -53,40 +53,9 @@ npm run build
 firebase deploy
 ```
 ###### src/App.js -> src/App.jsx
-```jsx
-function App() {
-    const [cards, setCards] = useState(shuffle); // src/utilities/shuffle.js
-    return (
-    <>
-        <div classname="grid">
-
-        </div>
-    </>
-    );
-}
-
-export default App;
-```
+> Change src/App.js to src/App.jsx and write src/App.jsx code until commit @ 20240504T174511Z
 ###### src/utilities/shuffle.js
-```js
-const shuffle = () => {
-    const asssets = [
-        { image: '/assets/css.png' },
-        { image: '/assets/html5.png' },
-        { image: '/assets/jquery.png' },
-        { image: '/assets/js.png' },
-        { image: '/assets/next.png' },
-        { image: '/assets/node.png' },
-        { image: '/assets/react.png' },
-        { image: '/assets/ts.png' },
-    ];
-    return [...assets, ...assets]
-        .sort(() => Math.random() - 0.5)
-        .map((card) => ({ ...card, id: Math.random() }));
-};
-
-export default shuffle;
-```
+> Write src/utilities/shuffle.js code until commit @ 20240504T174511Z
 ```bash
 cd ~/src/tmp/
 git clone https://github.com/fireship-io/react-course
@@ -96,55 +65,14 @@ rm -r ~/src/zachurdev/memento/public/assets/
 cp ~/src/tmp/react-course/public/assets ~/src/zachurdev/memento/public/assets
 ```
 ###### src/App.jsx
-```jsx
-function App() {
-  
-  const [cards, setCards] = useState(shuffle); // src/utilities/shuffle.js
-  
-  return (
-  <>
-
-    <div classname="grid">
-      {cards.map((card) => {
-        const { image, id, matched } = card;
-
-        return (
-          <Card
-            key={id}
-            image={image}
-            select={false}
-            onClick={() => {}}
-          />
-        );
-      })}
-    </div>
-  </>
-  );
-}
-
-export default App;
-```
+> Write src/App.jsx code until commit @ 20240504T174511Z
 ```bash
 mkdir ~/src/components/Card.jsx
 ```
 ###### src/components/Card.jsx
-```jsx
-const Card = ({ image, selected, onClick }) => {
-
-    return (
-        <div className="card">
-            <div className={select && 'selected'}>
-                <img alt="" src={image} className="card-face" />
-
-                <img
-                    alt=""
-                    className="card-back"
-                    src={'/assets/fireship.png'}
-                />
-            </div>
-        </div>
-    );
-};
-
-export default Card;
-```
+> Write src/components/Card.jsx code until commit @ 20240504T174511Z
+###### src/components/Header.jsx
+> Write src/components/Header.jsx
+###### Update src/App.jsx and src/components/Card.jsx until next 3rd commit
+> To test functionality locally, run `npm run build` followed by `serve -s build` from the project root
+**TODO:** *App components (Header, Cards) disappear after a win (all objects matched). Why?*
